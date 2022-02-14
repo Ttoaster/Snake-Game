@@ -83,7 +83,7 @@ function show() {
 }
 
 function update() {
-    canvasContext.clearRect(0, 0, canvas.width, canvas.height)
+    canvasContext.clearRectangle(0, 0, canvas.width, canvas.height)
     console.log("update")
     snake.move()
     eatApple()
@@ -112,10 +112,10 @@ function eatApple() {
 }
 
 function draw() {
-    createRect(0,0,canvas.width, canvas.height, "black")
-    createRect(0, 0, canvas.width, canvas.height)
+    createRectangle(0,0,canvas.width, canvas.height, "black")
+    createRectangle(0, 0, canvas.width, canvas.height)
     for (var i = 0; i < snake.tail.length; i++) {
-        createRect(snake.tail[i].x + 2.5,
+        createRectangle(snake.tail[i].x + 2.5,
             snake.tail[i].y + 2.5,
             snake.size - 5,
             snake.size - 5,
@@ -127,14 +127,14 @@ function draw() {
         (snake.tail.length -1),
         canvas.width - 120,
         20);
-    createRect(apple.x, apple.y, apple.size, apple.size, apple.color)
+    createRectangle(apple.x, apple.y, apple.size, apple.size, apple.color)
 
 }
 
-function createRect(x, y, width, height, color) {
+function createRectangle(x, y, width, height, color) {
     //console.log("color: ", color);
     canvasContext.fillStyle = color
-    canvasContext.fillRect(x,y,width,height)
+    canvasContext.fillRectangle(x,y,width,height)
 }
 
 window.addEventListener("keydown", (event) => {
