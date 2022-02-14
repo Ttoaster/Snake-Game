@@ -14,30 +14,30 @@ class Snake {
     }
 
     move() {
-        var newRect;
+        var newRectangle;
         if (this.rotateX == 1) {
-             newRect = {
+             newRectangle = {
                 x: this.tail[this.tail.length - 1].x + this.size,
                 y: this.tail[this.tail.length - 1].y
             }
         } else if  (this.rotateX == -1) {
-             newRect = {
+             newRectangle = {
                 x: this.tail[this.tail.length - 1].x - this.size,
                 y: this.tail[this.tail.length - 1].y
             }
         } else if (this.rotateY == 1) {
-             newRect = {
+             newRectangle = {
                 x: this.tail[this.tail.length - 1].x,
                 y: this.tail[this.tail.length - 1].y + this.size
             }
         } else if (this.rotateY == -1) {
-             newRect = {
+             newRectangle = {
                 x: this.tail[this.tail.length - 1].x,
                 y: this.tail[this.tail.length - 1].y - this.size
             }
         } 
         this.tail.shift()
-        this.tail.push(newRect)
+        this.tail.push(newRectangle)
     }
 }
 
